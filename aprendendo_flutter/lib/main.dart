@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: const Color.fromARGB(255, 255, 58, 137),
         ),
         body:  ListView(
-           children: [CardLivro( 'A Hipótese do Amor',40,25),CardLivro('Não é Amor',24,2),CardLivro('O efeito Graham',18,0),CardLivro('Não é Amor',24,2),CardLivro('O efeito Graham',18,0),CardLivro('Não é Amor',24,2),CardLivro('O efeito Graham',18,0),CardLivro('Não é Amor',24,2),CardLivro('O efeito Graham',18,0),]),
+           children: [CardLivro( 'A Hipótese do Amor',40),CardLivro('Não é Amor',24),CardLivro('O efeito Graham',18),CardLivro('Não é Amor',24),CardLivro('O efeito Graham',18),CardLivro('Não é Amor',24),CardLivro('O efeito Graham',18),CardLivro('Não é Amor',24),CardLivro('O efeito Graham',18),]),
       ),
     );
   }
