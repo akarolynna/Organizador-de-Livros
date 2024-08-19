@@ -71,25 +71,27 @@ class _CardLivroState extends State<CardLivro> {
                     ],
                   ),
                 ),
-                Tooltip(
+                  Tooltip(
                   message: 'Clique aqui e Adicione mais um capítulo lido ao seu livro!',
                   child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        capitulosLidos++;
-                        if (capitulosLidos == widget.capitulosTotais) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Você terminou a sua leitura de ${widget.capitulosTotais} capítulos!',
-                                style: const TextStyle(color: Colors.white),
-                              ),
-                              backgroundColor: Colors.green, // Define a cor de fundo como verde
-                            ),
-                          );
-                        }
-                      });
-                    },
+                    onPressed: capitulosLidos < widget.capitulosTotais
+                        ? () {
+                            setState(() {
+                              capitulosLidos++;
+                              if (capitulosLidos == widget.capitulosTotais) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Você terminou a sua leitura de ${widget.capitulosTotais} capítulos!',
+                                      style: const TextStyle(color: Colors.white),
+                                    ),
+                                    backgroundColor: Colors.green, // Define a cor de fundo como verde
+                                  ),
+                                );
+                              }
+                            });
+                          }
+                        : null, // Desativa o botão se os capítulos lidos forem iguais aos totais
                     child: const Icon(Icons.add),
                   ),
                 ),
