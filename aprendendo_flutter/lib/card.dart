@@ -16,13 +16,13 @@ class _CardLivroState extends State<CardLivro> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(16), // Padding ao redor do Stack
+      margin: const EdgeInsets.all(16),
       child: Stack(
         children: [
           // Container com margem
           Container(
-            height: 164, // Altura ajustada
-            width: 438, // Largura ajustada
+            height: 164,
+            width: 438,
             margin: const EdgeInsets.only(bottom: 0), // Margem para separar dos próximos elementos
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
@@ -37,7 +37,7 @@ class _CardLivroState extends State<CardLivro> {
               ],
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alterado para spaceBetween para espaçar uniformemente
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Container para a capa do livro
@@ -51,29 +51,40 @@ class _CardLivroState extends State<CardLivro> {
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start, // Ajuste o alinhamento vertical
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 20), // Menos padding superior
+                        padding: const EdgeInsets.only(left: 20, top: 20),
                         child: Text(
                           widget.titulo, // Usa o título passado pelo construtor
                           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 8), // Menos padding superior
+                        padding: const EdgeInsets.only(left: 20, top: 8),
                         child: Text('Capítulos Totais: ${widget.capitulosTotais}'),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 20, top: 8), // Menos padding superior
+                        padding: const EdgeInsets.only(left: 20, top: 8),
                         child: Text('Capítulos Lidos: $capitulosLidos'),
                       ),
                     ],
                   ),
                 ),
-                  Tooltip(
-                  message: 'Clique aqui e Adicione mais um capítulo lido ao seu livro!',
+                  Container(
+                
+                  margin: const EdgeInsets.only(right: 25, top:80),
+                  width: 35, 
+                  height: 35, 
                   child: ElevatedButton(
+                    
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue, 
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      padding: EdgeInsets.zero, // Fazx o meu + ficar no centro do botão
+                    ),
                     onPressed: capitulosLidos < widget.capitulosTotais
                         ? () {
                             setState(() {
@@ -85,14 +96,19 @@ class _CardLivroState extends State<CardLivro> {
                                       'Você terminou a sua leitura de ${widget.capitulosTotais} capítulos!',
                                       style: const TextStyle(color: Colors.white),
                                     ),
-                                    backgroundColor: Colors.green, // Define a cor de fundo como verde
+                                    backgroundColor: Colors.green,
                                   ),
                                 );
                               }
                             });
                           }
                         : null, // Desativa o botão se os capítulos lidos forem iguais aos totais
-                    child: const Icon(Icons.add),
+                    child: const Icon(
+                      
+                      Icons.add,
+                      size: 20, 
+                      color: Colors.white, 
+                    ),
                   ),
                 ),
               ],
