@@ -79,7 +79,7 @@ class _CardLivroState extends State<CardLivro> {
                   child: ElevatedButton(
                     
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, 
+                      backgroundColor:  const Color.fromARGB(255, 255, 58, 137), 
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4),
                       ),
