@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 class CardLivro extends StatefulWidget {
   final String titulo;
+  final String capaLivro;
   final int capitulosTotais;
 
-  CardLivro(this.titulo, this.capitulosTotais, {super.key});
+  CardLivro(this.titulo,this.capaLivro, this.capitulosTotais, {super.key});
 
   @override
   _CardLivroState createState() => _CardLivroState();
@@ -45,7 +46,9 @@ class _CardLivroState extends State<CardLivro> {
                   margin: const EdgeInsets.all(10),
                   color: Colors.grey,
                   width: 100,
-                  height: 150, // Ajuste a altura conforme necessário
+                  height: 150,
+                  child: Image.asset("assets/imagens/${widget.capitulosTotais}"),
+                   // Ajuste a altura conforme necessário
                 ),
                 // Coluna com o texto
                 Expanded(
