@@ -47,7 +47,7 @@ class _CardLivroState extends State<CardLivro> {
                   color: Colors.grey,
                   width: 100,
                   height: 150,
-                  child: Image.asset("assets/imagens/${widget.capitulosTotais}"),
+                  child: Image.asset("assets/imagens/${widget.capaLivro}"),
                    // Ajuste a altura conforme necessário
                 ),
                 // Coluna com o texto
