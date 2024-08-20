@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class DentroCar extends StatelessWidget {
-  const DentroCar({super.key});
+ final String titulo;
+  const DentroCar(this.titulo,{super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Dentro do Livro'),
@@ -29,7 +31,7 @@ class DentroCar extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                "A Hipótese do Amor",
+                titulo, 
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

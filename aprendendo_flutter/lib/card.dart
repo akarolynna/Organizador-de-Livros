@@ -25,7 +25,7 @@ class _CardLivroState extends State<CardLivro> {
         // Navega para a tela DentroCar quando o card é clicado
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DentroCar()),
+          MaterialPageRoute(builder: (context) => DentroCar(widget.titulo)),
         );
       },
       child: Container(
