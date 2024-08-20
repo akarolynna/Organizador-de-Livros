@@ -5,8 +5,9 @@ class CardLivro extends StatefulWidget {
   final String titulo;
   final String capaLivro;
   final int capitulosTotais;
+  final int estrela;
 
-  CardLivro(this.titulo, this.capaLivro, this.capitulosTotais, {super.key});
+  CardLivro(this.titulo, this.capaLivro, this.capitulosTotais,this.estrela, {super.key});
 
   @override
   _CardLivroState createState() => _CardLivroState();
@@ -84,12 +85,18 @@ class _CardLivroState extends State<CardLivro> {
                             margin: EdgeInsets.only(left: 20,top: 10),
                         child: Row(
                           children: [
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
-                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            //Vamos usar condição ternaria, pois o Dart não aceita um if tradicional ali,  : se não
+                            //? se ela for maior que 1 
+                            Icon(Icons.star, size: 15,color: (widget.estrela >=1) ?  Color.fromARGB(230, 18, 185, 52) :  Color.fromARGB(239, 132, 252, 154),),
+                          
+                            //if(widget.estrela >=1{
+                            //   Color.fromARGB(230, 18, 185, 52)} else{  Color.fromARGB(239, 132, 252, 154)} )
+                            // Color.fromARGB(230, 18, 185, 52) ,),
+                            Icon(Icons.star, size: 15,color: (widget.estrela >=2) ? Color.fromARGB(230, 18, 185, 52) :  Color.fromARGB(239, 132, 252, 154),),
+                            Icon(Icons.star, size: 15,color: (widget.estrela >=3) ?  Color.fromARGB(230, 18, 185, 52) :  Color.fromARGB(239, 132, 252, 154),),
+                            Icon(Icons.star, size: 15,color: (widget.estrela >=4) ?  Color.fromARGB(230, 18, 185, 52) :  Color.fromARGB(239, 132, 252, 154),),
+                            Icon(Icons.star, size: 15,color: (widget.estrela >=5) ?  Color.fromARGB(230, 18, 185, 52) :  Color.fromARGB(239, 132, 252, 154),),
+                            
                           ],
                         ),),
                         // Nossa famosa barra de pesquisas!
