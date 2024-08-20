@@ -13,10 +13,11 @@ class CardLivro extends StatefulWidget {
 }
 
 class _CardLivroState extends State<CardLivro> {
+  //está aqui pq eu não quero perder este valor se estivesse no build eu o poderia perder
   int capitulosLidos = 0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { // Tudo o que está dentro dela será reeescrito , redesenhado
     return InkWell(
       onTap: () {
         // Navega para a tela DentroCar quando o card é clicado
@@ -77,6 +78,19 @@ class _CardLivroState extends State<CardLivro> {
                           padding: const EdgeInsets.only(left: 20, top: 8),
                           child: Text('Capítulos Lidos: $capitulosLidos'),
                         ),
+                        // Nossa famosa barra de pesquisas!
+                        Container(
+                          width: 160,
+                          height: 6,
+                         margin: EdgeInsets.only(left: 20,top: 20),
+                        child:ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: LinearProgressIndicator(
+                            value: capitulosLidos.toDouble()/widget.capitulosTotais,
+                         color: Color.fromARGB(230, 18, 237, 62),
+                         backgroundColor: Color.fromARGB(239, 132, 252, 154)
+
+                          ),),),
                       ],
                     ),
                   ),
@@ -94,7 +108,7 @@ class _CardLivroState extends State<CardLivro> {
                       ),
                       onPressed: capitulosLidos < widget.capitulosTotais
                           ? () {
-                              setState(() {
+                              setState(() { // Está função diz para o meu widget quem é que está mudando
                                 capitulosLidos++;
                                 if (capitulosLidos == widget.capitulosTotais) {
                                   ScaffoldMessenger.of(context).showSnackBar(

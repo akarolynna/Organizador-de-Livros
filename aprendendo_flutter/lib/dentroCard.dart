@@ -83,9 +83,9 @@ class _DentroCarState extends State<DentroCar> {
             padding: const EdgeInsets.only(right: 35, left: 35, top: 20),
             child: Text(
               "Quando um namoro de mentira entre cientistas encontra a irresistível força da atração, todas as teorias cuidadosamente calculadas sobre o amor são postas à prova. Olive Smith, aluna do doutorado em Biologia da Universidade Stanford, acredita na ciência – não em algo incontrolável como o amor. Depois de sair algumas vezes com Jeremy, ela percebe que sua melhor amiga gosta dele e decide juntá-los. Para mostrar que está feliz com essa escolha, Olive precisa ser convincente: afinal, cientistas exigem provas.",
-              textAlign: TextAlign.justify, // Justifica o texto
+              textAlign: TextAlign.justify, 
               style: TextStyle(
-                height: 1.5, // Ajusta o espaçamento entre linhas
+                height: 1.5, 
                 fontSize: 13,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
@@ -112,7 +112,7 @@ class _DentroCarState extends State<DentroCar> {
             width: 240,
             height: 100,
             margin: const EdgeInsets.only(
-                right: 35, left: 35, top: 20), // Margem externa do Container
+                right: 35, left: 35, top: 20), 
             decoration: BoxDecoration(
               color: Color(0xFF148AA6),
               borderRadius: BorderRadius.circular(10),
@@ -148,7 +148,7 @@ class _DentroCarState extends State<DentroCar> {
             ),
             child: Padding(
               padding:
-                  const EdgeInsets.all(8.0), // Padding interno para o texto
+                  const EdgeInsets.all(8.0), 
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
