@@ -6,7 +6,7 @@ class CardLivro extends StatefulWidget {
   final String capaLivro;
   final int capitulosTotais;
 
-  CardLivro(this.titulo,this.capaLivro, this.capitulosTotais, {super.key});
+  CardLivro(this.titulo, this.capaLivro, this.capitulosTotais, {super.key});
 
   @override
   _CardLivroState createState() => _CardLivroState();
@@ -17,7 +17,8 @@ class _CardLivroState extends State<CardLivro> {
   int capitulosLidos = 0;
 
   @override
-  Widget build(BuildContext context) { // Tudo o que está dentro dela será reeescrito , redesenhado
+  Widget build(BuildContext context) {
+    // Tudo o que está dentro dela será reeescrito , redesenhado
     return InkWell(
       onTap: () {
         // Navega para a tela DentroCar quando o card é clicado
@@ -31,7 +32,7 @@ class _CardLivroState extends State<CardLivro> {
         child: Stack(
           children: [
             Container(
-              height: 164,
+              height: 170,
               width: 438,
               margin: const EdgeInsets.only(bottom: 0),
               decoration: BoxDecoration(
@@ -72,25 +73,40 @@ class _CardLivroState extends State<CardLivro> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20, top: 8),
-                          child: Text('Capítulos Totais: ${widget.capitulosTotais}'),
+                          child: Text(
+                              'Capítulos Totais: ${widget.capitulosTotais}'),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 20, top: 8),
                           child: Text('Capítulos Lidos: $capitulosLidos'),
                         ),
+                        Container(
+                            margin: EdgeInsets.only(left: 20,top: 10),
+                        child: Row(
+                          children: [
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                            Icon(Icons.star, size: 15,color:Color.fromARGB(230, 18, 237, 62) ,),
+                          ],
+                        ),),
                         // Nossa famosa barra de pesquisas!
                         Container(
                           width: 160,
                           height: 6,
-                         margin: EdgeInsets.only(left: 20,top: 20),
-                        child:ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: LinearProgressIndicator(
-                            value: capitulosLidos.toDouble()/widget.capitulosTotais,
-                         color: Color.fromARGB(230, 18, 237, 62),
-                         backgroundColor: Color.fromARGB(239, 132, 252, 154)
-
-                          ),),),
+                          margin: EdgeInsets.only(left: 20, top: 15),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: LinearProgressIndicator(
+                                value: capitulosLidos.toDouble() /
+                                    widget.capitulosTotais,
+                                color: Color.fromARGB(230, 18, 237, 62),
+                                backgroundColor:
+                                    Color.fromARGB(239, 132, 252, 154)),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -100,7 +116,8 @@ class _CardLivroState extends State<CardLivro> {
                     height: 35,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromARGB(255, 255, 58, 137),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 58, 137),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),
@@ -108,14 +125,16 @@ class _CardLivroState extends State<CardLivro> {
                       ),
                       onPressed: capitulosLidos < widget.capitulosTotais
                           ? () {
-                              setState(() { // Está função diz para o meu widget quem é que está mudando
+                              setState(() {
+                                // Está função diz para o meu widget quem é que está mudando
                                 capitulosLidos++;
                                 if (capitulosLidos == widget.capitulosTotais) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text(
                                         'Você terminou a sua leitura de ${widget.capitulosTotais} capítulos!',
-                                        style: const TextStyle(color: Colors.white),
+                                        style: const TextStyle(
+                                            color: Colors.white),
                                       ),
                                       backgroundColor: Colors.green,
                                     ),

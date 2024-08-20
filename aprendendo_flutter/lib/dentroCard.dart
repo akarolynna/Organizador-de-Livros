@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 
-class DentroCar extends StatefulWidget {
+class DentroCar extends StatelessWidget {
   const DentroCar({super.key});
 
-  @override
-  State<DentroCar> createState() => _DentroCarState();
-}
-
-class _DentroCarState extends State<DentroCar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,8 +113,7 @@ class _DentroCarState extends State<DentroCar> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding:
-                  const EdgeInsets.all(8.0), // Padding interno para o texto
+              padding: const EdgeInsets.all(8.0), // Padding interno para o texto
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
@@ -147,8 +141,7 @@ class _DentroCarState extends State<DentroCar> {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding:
-                  const EdgeInsets.all(8.0), 
+              padding: const EdgeInsets.all(8.0), 
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
