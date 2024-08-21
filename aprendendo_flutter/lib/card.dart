@@ -4,10 +4,14 @@ import 'dentroCard.dart';
 class CardLivro extends StatefulWidget {
   final String titulo;
   final String capaLivro;
+  final String autor;
+  final String sobre;
+  final String melhoresPartes1;
+  final String melhoresPartes2;
   final int capitulosTotais;
   final int estrela;
 
-  CardLivro(this.titulo, this.capaLivro, this.capitulosTotais,this.estrela, {super.key});
+  CardLivro(this.titulo, this.capaLivro, this.capitulosTotais,this.estrela, this.autor,this.sobre,this.melhoresPartes1, this.melhoresPartes2, {super.key});
 
   @override
   _CardLivroState createState() => _CardLivroState();
@@ -25,7 +29,7 @@ class _CardLivroState extends State<CardLivro> {
         // Navega para a tela DentroCar quando o card é clicado
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => DentroCar(widget.titulo)),
+          MaterialPageRoute(builder: (context) => DentroCar(widget.capaLivro,widget.titulo, widget.autor, widget.sobre, widget.melhoresPartes1, widget.melhoresPartes2)),
         );
       },
       child: Container(

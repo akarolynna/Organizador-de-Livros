@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class DentroCar extends StatelessWidget {
- final String titulo;
-  const DentroCar(this.titulo,{super.key});
+  final String titulo;
+  final String autor;
+  final String imagem;
+  final String melhoresPartes1;
+  final String melhoresPartes2;
+  final String sobre;
+  const DentroCar(this.imagem, this.titulo, this.autor, this.sobre, this.melhoresPartes1,
+      this.melhoresPartes2,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Dentro do Livro'),
@@ -22,7 +28,7 @@ class DentroCar extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: Image.asset("assets/imagens/livro1.jpeg"),
+                  child: Image.asset("assets/imagens/$imagem"),
                 ),
               ),
             ),
@@ -31,7 +37,7 @@ class DentroCar extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                titulo, 
+                titulo,
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -45,7 +51,7 @@ class DentroCar extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 13, bottom: 25),
               child: Text(
-                "De Ali Hazelwood",
+                autor,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.normal,
@@ -79,10 +85,10 @@ class DentroCar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 35, left: 35, top: 20),
             child: Text(
-              "Quando um namoro de mentira entre cientistas encontra a irresistível força da atração, todas as teorias cuidadosamente calculadas sobre o amor são postas à prova. Olive Smith, aluna do doutorado em Biologia da Universidade Stanford, acredita na ciência – não em algo incontrolável como o amor. Depois de sair algumas vezes com Jeremy, ela percebe que sua melhor amiga gosta dele e decide juntá-los. Para mostrar que está feliz com essa escolha, Olive precisa ser convincente: afinal, cientistas exigem provas.",
-              textAlign: TextAlign.justify, 
+              sobre,
+              textAlign: TextAlign.justify,
               style: TextStyle(
-                height: 1.5, 
+                height: 1.5,
                 fontSize: 13,
                 decoration: TextDecoration.none,
                 fontWeight: FontWeight.normal,
@@ -108,18 +114,18 @@ class DentroCar extends StatelessWidget {
           Container(
             width: 240,
             height: 100,
-            margin: const EdgeInsets.only(
-                right: 35, left: 35, top: 20), 
+            margin: const EdgeInsets.only(right: 35, left: 35, top: 20),
             decoration: BoxDecoration(
               color: Color(0xFF148AA6),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0), // Padding interno para o texto
+              padding:
+                  const EdgeInsets.all(8.0), // Padding interno para o texto
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "Porque estou começando a me perguntar se é isto que significa amar: concordar em destroçar a si mesmo em mil pedaços para que a outra pessoa permaneça inteira.",
+                  melhoresPartes1,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     height: 1.5,
@@ -143,11 +149,11 @@ class DentroCar extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0), 
+              padding: const EdgeInsets.all(8.0),
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  "A vida acadêmica tira muita coisa de você e te dá muito pouco em troca. É difícil se manter firme se você não tiver uma boa motivação pra isso.",
+               melhoresPartes2,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     height: 1.5,
