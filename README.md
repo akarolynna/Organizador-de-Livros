@@ -1,3 +1,19 @@
+
+# Organizador de Livros
+
+**Propósito:**  
+Este é um aplicativo simples desenvolvido para treinar conhecimentos em Flutter. O "Organizador de Livros" permite que os usuários organizem seus livros de forma personalizada. 
+
+### Funcionalidades:
+- **Adicionar Livros:** O usuário pode adicionar seus livros preferidos à coleção.
+- **Acompanhamento de Leitura:** É possível aumentar a quantidade de capítulos lidos à medida que o usuário avança na leitura.
+- **Classificação:** O usuário pode classificar os livros com uma avaliação de estrelas.
+
+Este projeto é uma excelente oportunidade para praticar e melhorar suas habilidades em Flutter!
+
+
+
+
 <div style="display: flex;">
         <img src="https://github.com/user-attachments/assets/d54eee76-5c45-40c2-a533-8415ee167bde" alt="trabalho1" width="200"/>
     <img src="https://github.com/user-attachments/assets/707a3017-8d22-441a-be64-05c75091d342" alt="trabalho2" width="200"/>
